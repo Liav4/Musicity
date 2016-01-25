@@ -1,0 +1,66 @@
+body {
+	margin: 0;
+}
+
+/*===========================================	header 	===========================================*/
+
+*:focus {
+	outline: inherit;
+}
+
+header h1 {
+	text-align: center;
+	margin-top: -0.4em;
+	font-size: 3em;
+	font-weight: normal;
+	color: white;
+}
+
+.log-in {
+	position: relative;
+	left: 20%;
+}
+
+#log-in-button {
+	margin-left: 2em;
+}
+
+.log-in label {
+	margin-left: 2em;
+	color: white;
+}
+
+input{
+	border-radius: 0.6em;
+}
+
+#header-div {
+
+}
+
+header {
+	background: linear-gradient(to left,#006699,#4daaca,#006699);
+	padding-bottom: 1em;
+
+	margin: 0;
+}
+
+.logo {
+	width: 12em;
+	height: 4em;
+}
+
+textarea {
+	resize:none;
+	border-radius: 0.6em;
+}
+
+/*===========================================	footer 	===========================================*/
+
+
+
+/*===========================================	utility 	===========================================*/
+
+.u-hide {
+	display: none;
+}
