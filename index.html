@@ -8,38 +8,58 @@
 	<body>
 		<header>
 			<div>
+				<!-- the logo image of the website -->
 				<img class="logo" src="deps/img/musicity-logo-white.png" alt="Musicity logo">
 				<h1>Welcome to Musicity CQA Site</h1>
 			</div>
-			<form class="log-in" action="">
+			<!-- a form to fill the log in information -->
+			<form class="log-in" action="http://localhost:8080/MusicityWebApp/MusicityServlet" method="post">
+				<!-- using a hidden input to figure out what does the doPost method need to do-->
+				<input type="hidden" name="hidden-input" value="1" />
+				<!-- a field to enter the username -->
 				<label  for="Username">Username: </label>
-				<input id="Username" type="text">
+				<input id="Username" type="text" name="log-in_username">
+				<!-- a field to enter the password -->
 				<label for="Password">Password: </label>
-				<input id="Password" type="password">
+				<input id="Password" type="password" name="log-in_password">
+				<!-- the log in button -->
 				<input id="log-in-button"  type="submit" value="Log In">			
 			</form>
 		</header>
 
-		<div class="sign-up">
+		<section class="sign-up">
 			<h2>Sign Up</h2>
-			<form>
+			<!-- a form to enter the sign up information -->
+			<form action="http://localhost:8080/MusicityWebApp/MusicityServlet" method="post">
+				<!-- using a hidden input to figure out what does the doPost method need to do-->
+				<input type="hidden" name="hidden-input" value="2" />
+				<!-- a field to enter the username -->
 				<label class="u-hide" for="Username">Username: </label>
-				<input id="Username" type="text" placeholder="Username">
+				<input id="Username" type="text" placeholder="Username" name="sign-up_username">
+				<!-- a field to enter the password -->
 				<label class="u-hide" for="Password">Password: </label>
-				<input id="Password" type="password" placeholder="Password">
+				<input id="Password" type="password" placeholder="Password" name="sign-up_password">
+				<!-- a field to enter the user nickname -->
 				<label class="u-hide" for="User-Nickname">User Nickname: </label>
-				<input id="User-Nickname" type="text" placeholder="User Nickname">
+				<input id="User-Nickname" type="text" placeholder="User Nickname" name="sign-up_user-nickname">
+				<!-- a field to enter the user photo's url -->
 				<label class="u-hide" for="Profile-Picture">Photo (optional): </label>
-				<input id="Profile-Picture" type="text" placeholder="Photo URL (optional)">
+				<input id="Profile-Picture" type="text" placeholder="Photo URL (optional)" name="sign-up_user-photo-url">
+				<!-- a space where the photo will be presented -->
 				<div class="your-profile-picture"></div>
+				<!-- a field to enter the short description of the user -->
 				<label class="u-hide" for="Short-Description">Short Description (optional): </label>
-				<textarea id="Short-Description" rows="6" cols="50" placeholder="Short Description... (up to 50 words, optional)"></textarea>
+				<textarea id="Short-Description" rows="6" cols="50" placeholder="Short Description... (up to 50 words, optional)"
+				name="sign-up_short-description"></textarea>
+				<!-- a button to submit the sign up information -->
 				<input class = ""  type="submit" value="Submit">
 			</form>
-		</div>
+		</section>
+		<!-- 3 paragraphs summing the essence of this CQA website -->
 		<p>Mucisity is a CQA (Community Question-Answering) site for musicians or music fans of all kinds.</p>
 		<p>In this site you can find questions and answers of all topics involving music, such as: topics about marketing and price checks of musical instruments, songs lyrics' queries, musical notes queries, any musical instrument lessons, and more...</p>
 		<p>We encourage you to sign up and be a part of our music lover community, and help each other learn more about music everyday.</p>
+		<!-- a footer for links about information associates with us and the website -->
 		<footer>
 			<ul>
 				<li>Help</li>
