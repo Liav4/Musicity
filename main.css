@@ -17,8 +17,15 @@ header h1 {
 }
 
 .log-in {
-	position: relative;
-	left: 20%;
+	margin-left: 22%;
+}
+
+
+/*none displaying the place holder on pc version*/
+#log-in_Username::-webkit-input-placeholder,
+#log-in_Password::-webkit-input-placeholder
+ {
+    visibility: hidden;
 }
 
 #log-in-button {
@@ -31,7 +38,7 @@ header h1 {
 }
 
 input{
-	border-radius: 0.6em;
+	border-radius: 0.4em;
 }
 
 #header-div {
@@ -52,7 +59,43 @@ header {
 
 textarea {
 	resize:none;
-	border-radius: 0.6em;
+	border-radius: 0.4em;
+	width: 30%;
+	height: 7rem;
+}
+
+/*===========================================	Sign-up section 	===========================================*/
+
+body {
+	background-color: #F0F0F0;
+
+}
+
+section{
+	padding: 1em;
+}
+
+input{
+	
+}
+
+
+
+header .error1{
+	text-align: center;
+	margin-left: 27%;
+}
+
+
+.error1{
+	display: none;
+}
+
+.error1{
+	border: solid red;
+	border-width: 0.2em;
+	width: 40%;
+	background-color: #F76060
 }
 
 /*===========================================	footer 	===========================================*/
