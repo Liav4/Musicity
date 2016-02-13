@@ -9,6 +9,10 @@ body {
 	outline: inherit;
 }
 
+.hello-user-msg{
+
+}
+
 input{
 	border-radius: 0.4em;
 }
@@ -70,6 +74,7 @@ header {
 
 body{
 	background-image: url("deps/img/home.jpg");
+	background-attachment: fixed;
 	background-position: center center;
 	background-repeat: no-repeat;
 	background-size: cover;

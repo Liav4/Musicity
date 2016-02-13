@@ -1,0 +1,93 @@
+body {
+	margin: 0;
+	background-image: url("deps/img/home.jpg");
+	background-attachment: fixed;
+	background-position: center center;
+	background-repeat: no-repeat;
+	background-size: cover;
+}
+
+/*===========================================	header 	===========================================*/
+
+*:focus {
+	outline: inherit; 
+}
+
+header h1 {
+	text-align: center;
+	margin-top: -0.4em;
+	font-size: 3em;
+	font-weight: normal;
+	color: white;
+}
+
+input{
+	border-radius: 0.4em;
+}
+
+header {
+	background: linear-gradient(to left,#006699,#4daaca,#006699);
+	padding-bottom: 1em;
+
+	margin: 0;
+}
+
+.logo {
+	width: 12em;
+	height: 4em;
+}
+
+/*===========================================	questions 	===========================================*/
+
+.question{
+	background-color: rgba(20,86,110,0.8);
+	color: #EEEEEE;
+	margin-bottom: 1rem;
+	font-size: 1.4rem;
+	text-align: center;
+	width: 100%;
+}
+
+
+
+
+.form-control {
+	width: 80%;
+	margin: auto;
+}
+
+.show-answer-checkbox:checked + .form-group{
+	display: block;
+}
+
+.show-answer-button {
+	background-color: rgba(20,86,110,0.7); 
+	cursor: pointer;
+	color: #EEEEEE;
+	width: 100%;
+}
+
+.answer-button {
+	width: inherit;
+	text-align: center;
+}
+
+.show-answer-button:hover {
+	background-color: rgba(20,86,110,1); 
+}
+
+.submit-the-answer {
+	margin-top: 1rem;
+	color: #111111;
+
+}
+
+/*===========================================	utility 	===========================================*/
+
+.u-hide {
+	display: none;
+}
+
+.u-disp-inline-b {
+	display: inline-block;
+}
