@@ -16,13 +16,13 @@
 			<!-- a form to fill the log in information -->
 			<form class="log-in" action="http://localhost:8080/MusicityWebApp/MusicityServlet" method="post">
 				<!-- using a hidden input to figure out what does the doPost method need to do-->
-				<input type="hidden" name="hidden-input" value="1" />
+				<input  type="hidden" name="hidden-input" value="1" />
 				<!-- a field to enter the username -->
 				<label  for="Username">Username: </label>
-				<input id="log-in_Username" type="text" name="log-in_username" placeholder="Username">
+				<input  class="input-t2" id="log-in_Username" type="text" name="log-in_username" placeholder="Username">
 				<!-- a field to enter the password -->
 				<label for="Password">Password: </label>
-				<input id="log-in_Password" type="password" name="log-in_password" placeholder="password">
+				<input class="input-t2" id="log-in_Password" type="password" name="log-in_password" placeholder="password">
 				<!-- the log in button -->
 				<input id="log-in-button"  type="submit" value="Log In">			
 			</form>
@@ -33,37 +33,85 @@
 		</header>
 
 		<section class="sign-up">
-			<h2>Sign Up</h2>
+			<h2 class="sign-up-title">Sign Up</h2>
 			<!-- a form to enter the sign up information -->
-			<form name="sign-up_form"  method="post" onsubmit="return validateForm()">
+			<form name="sign-up_form"  method="post" onsubmit="return handleSignUpForm()">
 				<!-- using a hidden input to figure out what does the doPost method need to do-->
 				<input type="hidden" name="hidden-input" value="2" />
-				<!-- a field to enter the username -->
-				<label class="u-hide" for="Username">Username: </label>
-				<input id="Username" type="text" placeholder="Username (up to 10 characters)" name="sign-up_username">
-				<!-- a field to enter the password -->
-				<label class="u-hide" for="Password">Password: </label>
-				<input id="Password" type="password" placeholder="Password (up to 8 characters)" name="sign-up_password">
-				<!-- a field to enter the user nickname -->
-				<label class="u-hide" for="User-Nickname">User Nickname: </label>
-				<input id="User-Nickname" type="text" placeholder="User Nickname (up to 20 characters)" name="sign-up_user-nickname">
-				<!-- a field to enter the user photo's url -->
-				<label class="u-hide" for="Profile-Picture">Photo (optional): </label>
-				<input id="Profile-Picture" type="text" placeholder="Photo URL (optional)" name="sign-up_user-photo-url">
-				<!-- a space where the photo will be presented -->
-				<div class="your-profile-picture"></div>
-				<!-- a field to enter the short description of the user -->
-				<label class="u-hide" for="Short-Description">Short Description (optional): </label>
-				<textarea id="Short-Description" placeholder="Short Description... (up to 50 words, optional)"
-				name="sign-up_short-description"></textarea>
-				<!-- a button to submit the sign up information -->
-				<input class = ""  type="submit" value="Submit">
-			</form>
+				<div>
 
-			<!-- error message - sign up with exisiting paramaters-->
-			<p class="error1" id="error2">
-				Sorry, the username you entered belongs to an existing account.
-			</p>
+
+					<!-- a field to enter the username -->
+					<label class="u-hide" for="Username">Username: </label>
+				
+					<input class="input-t1" id="Username" type="text" placeholder="Username (up to 10 characters)" name="sign-up_username">
+
+
+					<!-- error message - sign up with invalid paramaters-->
+					<p class="error1" id="s_username_l_error">
+						Please enter up to 10 character username.
+
+					<!-- error message - sign up with exisiting paramaters-->
+					<p class="error1" id="error2">
+						Sorry, the username you entered belongs to an existing account.
+					</p>
+
+				</div>
+				<div>
+					<!-- a field to enter the password -->
+					<label class="u-hide" for="Password">Password: </label>
+					<input class="input-t1" id="Password" type="password" placeholder="Password (up to 8 characters)" name="sign-up_password">
+
+					<!-- error message - sign up with invalid paramaters-->
+					<p class="error1" id="s_password_l_error">
+						Please enter up to 8 characters password.
+					</p>
+				</div>
+				<div>
+					<!-- a field to enter the user nickname -->
+					<label class="u-hide" for="User-Nickname">User Nickname: </label>
+				
+					<input class="input-t1" id="User-Nickname" type="text" placeholder="User Nickname (up to 20 characters)" name="sign-up_user-nickname">
+
+					<!-- error message - sign up with invalid paramaters-->
+					<p class="error1" id="s_nickname_l_error">
+						Please enter up to 20 characters user nickname.
+					</p>
+
+				</div>
+				<div>
+					<div class="u-disp-inline-b profile-pic-div">
+						<!-- a field to enter the user photo's url -->
+						<label class="u-hide" for="Profile-Picture">Photo (optional): </label>
+						<input class="input-t1" id="Profile-Picture" type="text" placeholder="Photo URL (optional)" name="sign-up_user-photo-url" onchange="updateProfilePic(this.value)">
+						<!-- a space where the photo will be presented -->
+						<div class="your-profile-picture">
+							<img id="profilePic" src="deps/img/default_profile_pic.jpg">
+						</div>
+					</div>
+					<div class="u-disp-inline-b text-area-div">
+						<!-- a field to enter the short description of the user -->
+						<label class="u-hide" for="Short-Description">Short Description (optional): </label>
+						<textarea id="Short-Description" placeholder="Short Description... (up to 50 words, optional)"
+						name="sign-up_short-description"></textarea>
+						</div>
+
+					<!-- error message - sign up with invalid paramaters-->
+					<p class="error1" id="s_url_l_error">
+						Your URL is too long.
+					</p>
+
+					<!-- error message - sign up with invalid paramaters-->
+					<p class="error1" id="s_descr_l_error">
+						You can NOT enter more than 50 words of description.
+					</p>
+
+					<div>
+						<!-- a button to submit the sign up information -->
+						<input class = ""  type="submit" value="Submit">
+					</div>
+				</div>
+			</form>
 
 			<!-- error message - sign up with invalid paramaters-->
 			<p class="error1" id="error3">

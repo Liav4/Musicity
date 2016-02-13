@@ -57,14 +57,13 @@ header {
 	height: 4em;
 }
 
-textarea {
-	resize:none;
-	border-radius: 0.4em;
-	width: 30%;
-	height: 7rem;
-}
+
 
 /*===========================================	Sign-up section 	===========================================*/
+
+.sign-up-title {
+
+}
 
 body {
 	background-color: #F0F0F0;
@@ -73,10 +72,24 @@ body {
 
 section{
 	padding: 1em;
+	text-align: center;
 }
 
 input{
 	
+}
+
+textarea {
+	resize:none;
+	border-radius: 0.4em;
+	width: 100%;
+	height: 7rem;
+}
+
+
+.input-t1{
+	width: 22%;
+	margin-bottom: 1rem;
 }
 
 
@@ -88,6 +101,8 @@ header .error1{
 
 
 .error1{
+	
+	display: inline-block;
 	display: none;
 }
 
@@ -95,8 +110,35 @@ header .error1{
 	border: solid red;
 	border-width: 0.2em;
 	width: 40%;
-	background-color: #F76060
+	background-color: #F76060;
+	margin: auto;
 }
+
+
+.your-profile-picture img
+{
+	width: 50px;
+	height: 50px;
+}
+
+.text-area-div,
+.profile-pic-div {
+	width: 42%;
+}
+
+.profile-pic-div {
+	float: left;
+	position: relative;
+	left: 15%;
+
+}
+
+.profile-pic-div input{
+	width: 40%;
+	margin-top: 1.5rem;
+
+}
+
 
 /*===========================================	footer 	===========================================*/
 
@@ -106,4 +148,8 @@ header .error1{
 
 .u-hide {
 	display: none;
+}
+
+.u-disp-inline-b {
+	display: inline-block;
 }
