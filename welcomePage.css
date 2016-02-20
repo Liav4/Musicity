@@ -38,6 +38,12 @@ header {
 }
 
 
+.hello-user-msg{
+	color: #EEEEEE;
+	font-size: 1.5rem;
+	margin-left: 1.5rem;
+}
+
 .box_t1 {
 	width: 35%;
 	display: inline-block;
@@ -51,6 +57,7 @@ header {
 	margin-left: 3rem;
 	font-size: 1.5rem;
 	float: left;
+	border-radius: 0.6rem;
 }
 
 .box_t2 {

@@ -4,6 +4,13 @@
 		<meta charset="UTF-8">
 		<title>Musicity - Log In or Sign Up</title>
 		<script src="main.js"></script>
+		<script src="jquery/jquery-1.12.0.min.js"></script>
+		<script src="angularJS/angular.min.js"></script>
+		<script src="browseExistingQ.js"></script>
+		<!-- Latest compiled JavaScript -->
+		<script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
+
+
 		<link rel="stylesheet" type="text/css" href="main.css">
 	</head>
 	<body>
@@ -44,7 +51,7 @@
 					<!-- a field to enter the username -->
 					<label class="u-hide" for="Username">Username: </label>
 				
-					<input class="input-t1" id="Username" type="text" placeholder="Username (up to 10 characters)" name="sign-up_username">
+					<input ng-model="user.name" required class="input-t1" id="Username" type="text" placeholder="Username (up to 10 characters)" name="sign-up_username">
 
 
 					<!-- error message - sign up with invalid paramaters-->
@@ -60,7 +67,7 @@
 				<div>
 					<!-- a field to enter the password -->
 					<label class="u-hide" for="Password">Password: </label>
-					<input class="input-t1" id="Password" type="password" placeholder="Password (up to 8 characters)" name="sign-up_password">
+					<input ng-model="user.name" required class="input-t1" id="Password" type="password" placeholder="Password (up to 8 characters)" name="sign-up_password">
 
 					<!-- error message - sign up with invalid paramaters-->
 					<p class="error1" id="s_password_l_error">
@@ -128,12 +135,13 @@
 				</p>
 			</div>
 		</section>
+		<!--
 		<section>
-			<!-- 3 paragraphs summing the essence of this CQA website -->
+			<!-- 3 paragraphs summing the essence of this CQA website 
 			<p>Mucisity is a CQA (Community Question-Answering) site for musicians or music fans of all kinds.</p>
 			<p>In this site you can find questions and answers of all topics involving music, such as: topics about marketing and price checks of musical instruments, songs lyrics' queries, musical notes queries, any musical instrument lessons, and more...</p>
 			<p>We encourage you to sign up and be a part of our music lover community, and help each other learn more about music everyday.</p>
-			<!-- a footer for links about information associates with us and the website -->
+			<!-- a footer for links about information associates with us and the website 
 		</section>
 		<footer>
 			<ul>
@@ -150,6 +158,6 @@
 						</ul>
 					</div>
 				</div>
-		</footer>
+		</footer> -->
 	</body>
 </html>

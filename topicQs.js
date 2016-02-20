@@ -1,4 +1,3 @@
-var idG = 777;
 var questionsArr = {
 	questions : [
 		{
@@ -16,34 +15,30 @@ var questionsArr = {
 					authorNickname:"Charlie wrote this ans",
 					rating: 4.7,
 					id:123,
-					vote:-1,
 					questionId:32
 				},
 				{
 					timestamp:"an234sdd/mm/yyyy hh:mm:ss",
 					text:"ansdsa answ asn asnw",
 					authorNickname:"Csfdsharlie wrote this ans",
-					rating: 44,
+					rating: 44.7,
 					id:664,
-					vote:1,
 					questionId:323
 				},
 				{
 					timestamp:"ansdd/mm/yyyy hh:mm:ss",
 					text:"ans answ asn asnw",
 					authorNickname:"Charlie wrote this ans2",
-					rating: 4,
+					rating: 4.7,
 					id:13223,
-					vote:0,
 					questionId:322
 				},
 				{
 					timestamp:"an234sdd/mm/yyyy hh:mm:ss",
 					text:"ansdsa answ asn asnw",
 					authorNickname:"Csfdsharlie wrote this ans",
-					rating: 44,
+					rating: 44.7,
 					id:66344,
-					vote:1,
 					questionId:3253
 				}
 			]
@@ -55,15 +50,14 @@ var questionsArr = {
 			rating:102,
 			authorNickname:"cha",
 			id:2,
-			vote: 0,/*1 = like, 0 = none , -1 = dislike*/
+			vote: -1,/*1 = like, 0 = none , -1 = dislike*/
 			answers: [
 				{
 					timestamp:"ans2dd/mm/yyyy hh:mm:ss",
 					text:"a22ns answ asn asnw",
 					authorNickname:"Charlie-nck wrote this ans",
-					rating: 8,
+					rating: 8.11,
 					id:127,
-					vote:1,
 					questionId:35
 				}
 			]
@@ -83,7 +77,6 @@ var questionsArr = {
 					authorNickname:"Charliewrote this ansee32e",
 					rating: 4.7,
 					id:12783,
-					vote:1,
 					questionId:32
 				},
 				{
@@ -92,7 +85,6 @@ var questionsArr = {
 					authorNickname:"Csfdsharlie wrote this answrote this ans",
 					rating: 44.7,
 					id:564,
-					vote:-1,
 					questionId:323
 				}
 			]
@@ -111,11 +103,23 @@ var questionsArr = {
 	]
 }
 
-//alert(questionsArr.questions[2].answers.length);
+var topicQsApp = angular.module('topicPage', []);
 
-var browseExistingQsApp = angular.module('browseExistingQsApp', []);
+topicQsApp.controller('showTopicQs', function ($scope) {
+	$scope.theTopic = "Piano Lessons" + " Top Questions";
+	//$scope.user = usersArr.users[0];
+	//$scope.topTopics = usersArr.users[0].topTopics;
+	//$scope.topQs = usersArr.users[0].questions;
 
-browseExistingQsApp.controller('listQs', function ($scope) {
+});
+
+
+
+
+
+//var browseExistingQsApp = angular.module('browseExistingQsApp', []);
+
+topicQsApp.controller('listQs', function ($scope) {
 	$scope.questions = questionsArr.questions;
 	$scope.answers = questionsArr.questions.answers;
 	$scope.name = "Charlie";
@@ -207,33 +211,21 @@ browseExistingQsApp.controller('listQs', function ($scope) {
 
 });
 
-		//var temp = document.getElementById("like_q_1");
-		//temp.style.display = "none";
-
-	/*function test(var)
-	{
-		var.style.border = "solid red";
-	}
-/*var qLen = questionsArr.questions.length;
-var ansLen = 0;
-for(i = 0 ; i < qLen ; i++)
-{
-	ansLen = questionsArr.questions[i].answers.length;
-	if(ansLen == 1)
-	{
-		var myEl = angular.element[0]( document.querySelector( '#show-more' + questionsArr.questions[i].id) );
-		alert(questionsArr.questions[i].id)
-		var tempId = 'show-more' + questionsArr.questions[i].id;
-		alert(tempId)
-		var temp = document.getElementById('show-more');
-		myEl.style.border = "solid red";
-	}
-}
 
 
 
 
-*/
+
+
+
+
+
+
+
+
+
+
+
 
 
 

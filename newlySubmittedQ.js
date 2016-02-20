@@ -1,57 +1,222 @@
-var text = { 
+var idG = 777;
+var questionsArr = {
 	questions : [
-		{ timestamp:"dd/mm/yyyy hh:mm:ss" , topics:"#guitar #piano" , text:"qqq qqq qqq qqq qqq qqq qqq qqq qqq qqq qqq qqq qqq qqq qqq qqq qqq qqq qqq qqq qqq qqq qqq qqq ", rating:"100", authorNickname:"1mynick1", id:1		},
-		{ timestamp:"13:14" , topics:"#guitar #piano" , text:"2what is my name?!", rating:"101", authorNickname:"2mynick2" 
-
-		,id:2},
-		{ timestamp:"15:13" , topics:"#guitar #piano #guitar #piano #guitar #piano " , text:"3what is my name?!", rating:"1020", authorNickname:"3mynick3" 
-
-		,id:3} 
-]};
-
-
-var questionObj = text;
-/*for (j = 0; j < 3 ; j++) {
-	alert(questionObj.questions[j].text);
-}*/
-
-var numOfQs = questionObj.questions.length;
-if(numOfQs == 0 || numOfQs == null){
-	//print a msg
+		{
+			timestamp:"dd/mm/yyyy hh:mm:ss" ,
+			topics: [{name:"topic1"} ,{name:"topic2"}],
+			text:"qqq qqq qqq qqq qqq qqq qqq qqq qqq qqq qqq qqq qqq qqq qqq qqq qqq qqq qqq qqq qqq qqq qqq qqq ",
+			rating:100,
+			authorNickname:"1mynick1",
+			id:1,
+			vote: 1,/*1 = like, 0 = none , -1 = dislike*/
+			answers: [
+				{
+					timestamp:"ansdd/mm/yyyy hh:mm:ss",
+					text:"ans answ asn asnw",
+					authorNickname:"Charlie wrote this ans",
+					rating: 4.7,
+					id:123,
+					vote:-1,
+					questionId:32
+				},
+				{
+					timestamp:"an234sdd/mm/yyyy hh:mm:ss",
+					text:"ansdsa answ asn asnw",
+					authorNickname:"Csfdsharlie wrote this ans",
+					rating: 44,
+					id:664,
+					vote:1,
+					questionId:323
+				},
+				{
+					timestamp:"ansdd/mm/yyyy hh:mm:ss",
+					text:"ans answ asn asnw",
+					authorNickname:"Charlie wrote this ans2",
+					rating: 4,
+					id:13223,
+					vote:0,
+					questionId:322
+				},
+				{
+					timestamp:"an234sdd/mm/yyyy hh:mm:ss",
+					text:"ansdsa answ asn asnw",
+					authorNickname:"Csfdsharlie wrote this ans",
+					rating: 44,
+					id:66344,
+					vote:1,
+					questionId:3253
+				}
+			]
+		},
+		{
+			timestamp:"q2/mm/yyyy hh:mm:ss" ,
+			topics: [{name:"topic3"} ,{name:"topicds"}],
+			text:"que que q qqq qqq qqq qqq qqq qqq qqq qqq qqq qqq qqq qqq qqq qqq qqq qqq qqq qqq qqq qqq ",
+			rating:102,
+			authorNickname:"cha",
+			id:2,
+			vote: 0,/*1 = like, 0 = none , -1 = dislike*/
+			answers: [
+				{
+					timestamp:"ans2dd/mm/yyyy hh:mm:ss",
+					text:"a22ns answ asn asnw",
+					authorNickname:"Charlie-nck wrote this ans",
+					rating: 8,
+					id:127,
+					vote:1,
+					questionId:35
+				}
+			]
+		},
+		{
+			timestamp:"dd/mm/yyyy hh:mm:ss" ,
+			topics: [{name:"topic1"} ,{name:"topic2"}],
+			text:"qqq qqq qqq qqq qqq qqq qqq qqq qqq qqq qqq qqq qqq qqq qqq qqq qqq qqq qqq qqq qqq qqq qqq qqq ",
+			rating:100,
+			authorNickname:"1mynick1",
+			id:88,
+			vote: 1,/*1 = like, 0 = none , -1 = dislike*/
+			answers: [
+				{
+					timestamp:"ansdd/mm/yyyy hh:mm:ss",
+					text:"ans answ asn asnw",
+					authorNickname:"Charliewrote this ansee32e",
+					rating: 4.7,
+					id:12783,
+					vote:1,
+					questionId:32
+				},
+				{
+					timestamp:"an234sdd/mm/yyyy hh:mm:ss",
+					text:"ansdsa answ asn asnw",
+					authorNickname:"Csfdsharlie wrote this answrote this ans",
+					rating: 44.7,
+					id:564,
+					vote:-1,
+					questionId:323
+				}
+			]
+		},
+		{
+			timestamp:"dd/mm/yyyy hh:mm:ss" ,
+			topics: [{name:"topic1"} ,{name:"topic2"}],
+			text:"qqq qqq qqq qqq qqq qqq qqq qqq qqq qqq qqq qqq qqq qqq qqq qqq qqq qqq qqq qqq qqq qqq qqq qqq ",
+			rating:100,
+			authorNickname:"1mynick1",
+			id:1324,
+			vote: 1,/*1 = like, 0 = none , -1 = dislike*/
+			answers:[]
+		}
+		
+	]
 }
-$(document).ready(function(){
-	
-	for (var i = 0; i < numOfQs; i++) {
-		var q = questionObj.questions[i];
 
-		// There should already be a DOM element with the class 'question'. Read more about jQuery 'append'
-		$('.questions').append('<div class = "question"><div class = "row"><p class = "col-md-12">' + 
-		/*q.text*/q.text + '</p></div>' + '<div class = "row"> <div class = "col-md-4">' 
-		+ /*time*/q.timestamp + '</div> <div class = "col-md-4">' + /*topics*/q.topics +
-		 '</div><div class = "col-md-2"> rating: ' + q.rating/*rating*/ +
-		  '</div>' +
-		  
-		  '<div class = "col-md-2"><button type="button" class="btn btn-default" aria-label="Left Align">'+
-		  '<span class="glyphicon glyphicon-thumbs-up" aria-hidden="true"></span></button><button type="button" class="btn btn-default" aria-label="Left Align">'+
-		  '<span class="glyphicon glyphicon-thumbs-down" aria-hidden="true"></span></button></div>'
-		  + '<div class = "row">' + 
-		  	'<div class = "col-md-2">' + q.authorNickname + '</div>'
-		  + '</div>'
-		   + '<div class="container">' + 
-			'<label for="answer' + q.id + '" class="answer-button"><label for="show-answer' + q.id + '" class="show-answer-button">Provide an Answer</label></label>' + 
-			'<input  class="u-hide show-answer-checkbox" type="checkbox" id="show-answer' + q.id  + '">' + 
-			'<div class="form-group u-hide">' + 
-				'<textarea class="form-control" rows="5" id="answer-text' + q.id  + '" placeholder = "Your Answer... (up to 300 characters)"></textarea>'
-			+
-			'<div>' + 
-			'<input class="submit-the-answer"  type="submit" value="submit">' + 	
-		'</div>' + 
-			'</div></div></div>'
 
-		  );
+
+
+var browseExistingQsApp = angular.module('viewNewlyQapp', []);
+
+browseExistingQsApp.controller('listQs', function ($scope) {
+	$scope.less = true;
+	$scope.questions = questionsArr.questions;
+	$scope.answers = questionsArr.questions.answers;
+	$scope.name = "Charlie";
+	$scope.providedAns = 'hello';
+	$scope.submitAns = function(q) {
+	    if (q.providedAns) {
+	      alert('new answer to question with ID = ' + q.id + ' : ' + q.providedAns + 'num = ' + q.answers.length);
+	      var currentdate = new Date(); 
+
+	      var temptimestamp = currentdate.getDate() + '/'
+	      		 + (currentdate.getMonth()+1) + '/' + 
+	      		 currentdate.getFullYear() + ' ' +
+	      		  currentdate.getHours() + ':' + 
+	      		  currentdate.getMinutes() + ':' + 
+	      		  currentdate.getSeconds();
+
+	      (q.answers).push({
+	      	timestamp:temptimestamp,
+			text:q.providedAns,
+			authorNickname:"Charlie-nck wrote this ans",
+			rating: 0,
+			id:idG,
+			vote:0,
+			questionId:q.id
+	      });
+	      idG ++;
+	      q.providedAns = '';
+	    }
 	}
-/*	alert("nice");*/
+	if ( questionsArr.questions[0].id == 1)
+	{
+		alert('entered');
+	//	temp = document.getElementById("like_q_1");
+		//temp.style.border = "solid red;";
+	}
+	$scope.handleLike = function(q){
+		//alert('handleLike');
+		if(q.vote != 1)
+		{
+			
+			if(q.vote == 0)
+			{
+				q.rating += 1;
+			}
+			else //q.vote == -1
+			{
+				q.rating += 2;
+			}
+			q.vote = 1;
+		}
+		else
+		{
+			q.vote = 0;
+			q.rating -= 1;
+		}
+		//alert('vote = ' + q.vote);
+	}
 
-})
+	$scope.handleDislike = function(q){
+		if(q.vote != -1)
+		{
+			
+			if(q.vote == 0)
+			{
+				q.rating -= 1;
+			}
+			else //q.vote == -1
+			{
+				q.rating -= 2;
+			}
+			q.vote = -1;
+		}
+		else
+		{
+			q.rating += 1;
+			q.vote = 0
+		}
+}
+
+
+});
+
+
+
+
+
+browseExistingQsApp.controller('paggingCtr', function ($scope) 
+{
+	$scope.thisPage = 1;//initialize it as 1
+	$scope.numOfPages = 7;//put here the number of pages 
+	$scope.handleNextPage = function(){			
+		$scope.thisPage += 1;		
+		//request the ( $scope.thispage  ) page from the server
+	}
+	$scope.handlePrevPage = function(){
+		$scope.thisPage -= 1;
+		//request the ( $scope.thispage - 1 ) page from the server
+	}
+
+});
 
 

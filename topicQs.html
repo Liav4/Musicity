@@ -1,32 +1,30 @@
 <!DOCTYPE html>
-<html lang="en" ng-app = "viewNewlyQapp">
+<html lang="en" ng-app="topicPage"  ng-controller="showTopicQs">
 <head>
 	<meta charset="UTF-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 
-	<title>Musicity - New Questions</title>
+	<title>Musicity - {{theTopic}}</title>
 
 	<script src="jquery/jquery-1.12.0.min.js"></script>
 	<script src="angularJS/angular.min.js"></script>
-	<script src="newlySubmittedQ.js"></script>
+	<script src="topicQs.js"></script>
 	<!-- Latest compiled JavaScript -->
 	<script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
 
 	<link rel="stylesheet" href="bootstrap/css/bootstrap.min.css">	
 	<link rel="stylesheet" type="text/css" href="browseExistingQ.css">
-
-
 </head>
-<body>
+<body >
 	<header>
 		<div>
 			<!-- the logo image of the website -->
 			<img class="logo" src="deps/img/musicity-logo-white.png" alt="Musicity logo">
-			<h1>Newly Submitted Questions</h1>
+			<h1>{{theTopic}}</h1>
 		</div>
 	</header>
 
-<!-- Responsive Navbar -->
+	<!-- Responsive Navbar -->
 
 	<nav role="navigation" class="navbar navbar-default">
 	  <div class="container">
@@ -41,22 +39,19 @@
 	    <div class="navbar-collapse collapse">
 	      <ul class="nav navbar-nav">
 	        <li><a href="welcomePage.html">Home</a></li>
-	        <li class="active"><a href="newlySubmittedQ.html">Newly Submitted Questions</a></li>
+	        <li ><a href="newlySubmittedQ.html">Newly Submitted Questions</a></li>
 	        <li><a href="usersLeaderboard.html">View Users' Leaderboard</a></li>
-	      <li class="dropdown">
-	          <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Browse Questions <span class="caret"></span></a>
-	          <ul class="dropdown-menu">
-	            <li><a href="browseExistingQ.html">Browse Existing Questions</a></li>
-	            <li role="separator" class="divider"></li>
-	            <li><a href="browseQByTopics.html">Browse Questions By Topics</a></li>
+	        <li class="dropdown">
+				<a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Browse Questions <span class="caret"></span></a>
+				<ul class="dropdown-menu">
+				<li class=""><a href="browseExistingQ.html">Browse Existing Questions</a></li>
+				<li role="separator" class="divider"></li>
+				<li><a href="browseQByTopics.html">Browse Questions By Topics</a></li>
 	          </ul>
-	        </li>
 	      </ul>
 	    </div><!--/.nav-collapse -->
 	  </div><!--/.container -->
 	</nav>
-	<!--<section class="container">-->
-	
 	<ul ng-controller="listQs">
 		<li class="row question" ng-repeat="q in questions">
 			<div class="bg">
@@ -70,7 +65,7 @@
 						{{q.timestamp}}
 					</div> 
 					<div class = "col-md-4">
-						Topics:
+						Top Topics:
 						<span ng-repeat="topic in q.topics"> {{topic.name}}</span>
 					</div>
 					<div class = "col-md-2">
@@ -87,8 +82,7 @@
 					<div class = "row">
 					  	<div class = "col-md-2">{{q.authorNickname}}  </div>
 					</div>
-				</div>
-				<div class="container">
+					<div class="container">
 						<label for="answer{{q.id}}" class="answer-button">
 							<label for="show-answer{{q.id}}" class="show-answer-button">
 								Provide an Answer
@@ -103,6 +97,9 @@
 						</form>
 					</div>
 				</div>
+			</div>
+
+
 				<ul class="answers">
 					<li class="row answer" ng-repeat="ans in q.answers" ng-if="$index == 0" > <!--First answer -->
 						<h2 class="answers-title">Answers:</h2>
@@ -135,8 +132,9 @@
 						
 						<input  class="u-hide show-more-checkbox" type="checkbox" id="show-more{{q.id}}">
 
-						<label ng-hide="q.answers.length < 2"  for="show-more{{q.id}}" class="show-more-label">Show More</label>
-						<label ng-hide="q.answers.length < 2"  for="show-more{{q.id}}" class="u-hide show-more-label">Show Less</label>
+						<label ng-hide="q.answers.length < 2" for="show-more{{q.id}}" class="show-more-label">Show More</label>
+						<label ng-hide="q.answers.length < 2" for="show-more{{q.id}}" class="u-hide show-more-label">Show Less</label>
+
 						<ul class="more-answers u-hide"> <!--other answer -->
 							<li class="row answer" ng-repeat="ans in q.answers" ng-if="$index > 0">
 								<div class="row">
@@ -167,24 +165,7 @@
 						</ul>
 					</li>
 				</ul>
-
+			<!--</div>-->
 		</li>
-
 	</ul>
-
-<!--	</section> -->
-		
-
-		<div class = "pagging" ng-controller = "paggingCtr">
-			<button type="button" class="btn" ng-hide = "thisPage == 1"  ng-click="handlePrevPage()">
-				<span class="glyphicon glyphicon-triangle-left" aria-hidden="true"></span>
-			</button>
-			<span>{{thisPage}}</span>
-			<button type="button" class="btn" ng-hide = "thisPage == numOfPages" ng-click="handleNextPage()" aria-label="Left Align" ng-click="">
-				<span class="glyphicon glyphicon-triangle-right" aria-hidden="true"></span>
-			</button>
-		</div>
-
-
 </body>
-</html>

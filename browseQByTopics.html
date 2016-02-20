@@ -1,28 +1,28 @@
 <!DOCTYPE html>
-<html lang="eng" ng-app="usersLeaderboardApp">
+<html lang="eng" ng-app="topTopics">
 <head>
 	<meta charset="UTF-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 
-	<title>Musicity - Users' Leaderboard</title>
+	<title>Musicity - Top Topics</title>
 
 	<script src="jquery/jquery-1.12.0.min.js"></script>
 	<script src="angularJS/angular.min.js"></script>
-	<script src="js/controller.js"></script>
+	<script src="browseQByTopics.js"></script>
 	<!-- Latest compiled JavaScript -->
 	<script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
 	
 	<link rel="stylesheet" href="bootstrap/css/bootstrap.min.css">
-	<link rel="stylesheet" type="text/css" href="usersLeaderboard.css">
+	<link rel="stylesheet" type="text/css" href="browseQByTopics.css">
 	
 	
 </head>
-<body ng-controller="listUser">
+<body ng-controller="listTopics">
 	<header>
 		<div>
 			<!-- the logo image of the website -->
 			<img class="logo" src="deps/img/musicity-logo-white.png" alt="Musicity logo">
-			<h1>Users' Leaderboad</h1>
+			<h1>Top Topics</h1>
 		</div>
 	</header>
 	<!-- Responsive Navbar -->
@@ -41,34 +41,34 @@
 	      <ul class="nav navbar-nav">
 	        <li><a href="welcomePage.html">Home</a></li>
 	        <li><a href="newlySubmittedQ.html">Newly Submitted Questions</a></li>
-	        <li class="active"><a href="usersLeaderboard.html">View Users' Leaderboard</a></li>
-	        <li class="dropdown">
+	        <li><a href="usersLeaderboard.html">View Users' Leaderboard</a></li>
+	        <li class="active dropdown">
 	          <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Browse Questions <span class="caret"></span></a>
 	          <ul class="dropdown-menu">
 	            <li><a href="browseExistingQ.html">Browse Existing Questions</a></li>
 	            <li role="separator" class="divider"></li>
-	            <li><a href="browseQByTopics.html">Browse Questions By Topics</a></li>
+	            <li class="active"><a href="browseQByTopics.html">Browse Questions By Topics</a></li>
 	          </ul>
-	        </li>
 	      </ul>
 	    </div><!--/.nav-collapse -->
 	  </div><!--/.container -->
 	</nav>
 
 
-	<ol class="container tUsers">
-		<li class="row user" ng-repeat="user in topUsers">
-			<div class="col-md-4"><a href="https://www.google.com">{{user.nickname}}</a></div>
-			<div class="col-md-4">Rating: {{user.rating}}</div>
-			<div class="your-profile-picture">
-				<img id="profilePic" src="{{user.image}}">
-			</div>
-			<div class="col-md-12">
-				Top Topics:
-				<span ng-repeat="topic in user.topTopics"> {{topic.name}}</span>
-			</div>
+	<ol class="container tTopics">
+		
+		<li class="row topic" ng-repeat="topic in topTopics">
+			<a href="topic_{{topic.name}}.html">
+				<div class="col-md-12">
+					{{topic.name}}
+				</div>
 
+				<div class="col-md-12 rating">
+					Rating: {{topic.rating}}
+				</div>
+			</a>
 		</li>
+	
 	</ol>
 </body>
 </html>

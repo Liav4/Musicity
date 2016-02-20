@@ -48,10 +48,19 @@ header {
 	font-size: 1.4rem;
 	text-align: center;
 	width: 100%;
+	min-height: 100%;
+	font-weight: bold;
 }
 
-.user:hover {
+.topic:hover {
 	background-color: rgba(20,86,110,0.9);
+	cursor: pointer;
+}
+
+
+.rating {
+	margin-top: 1rem;
+	margin-bottom: 1rem;
 }
 
 a{
@@ -63,17 +72,15 @@ a:focus{
 	color: #FFFFFF;
 }
 
-
-
-.tUsers {
+.tTopics {
 	list-style-type: none;
 }
 
-.tUsers li {
+.tTopics li {
     counter-increment: step-counter;
 }
 
-.tUsers li:before{
+.tTopics li:before{
     content: counter(step-counter);
     font-size: 110%;
   	background-color: transparent;
@@ -84,9 +91,12 @@ a:focus{
 }
 
 
+
+
 .your-profile-picture img
 {
 	width: 50px;
 	height: 50px;
 }
 
+W

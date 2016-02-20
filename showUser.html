@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="eng" ng-app="userPage"  ng-controller="showUser">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+
+	<title>Musicity - {{user.name}}</title>
+
+	<script src="jquery/jquery-1.12.0.min.js"></script>
+	<script src="angularJS/angular.min.js"></script>
+	<script src="showUser.js"></script>
+	<!-- Latest compiled JavaScript -->
+	<script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
+	
+	<link rel="stylesheet" href="bootstrap/css/bootstrap.min.css">
+	<link rel="stylesheet" type="text/css" href="showUser.css">
+	
+	
+</head>
+<body>
+	<header>
+		<div>
+			<!-- the logo image of the website -->
+			<img class="logo" src="deps/img/musicity-logo-white.png" alt="Musicity logo">
+			<h1>{{user.name}} page</h1>
+		</div>
+	</header>
+	<!-- Responsive Navbar -->
+
+	<nav role="navigation" class="navbar navbar-default">
+	  <div class="container">
+	    <div class="navbar-header">
+	      <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+	        <span class="icon-bar"></span>
+	        <span class="icon-bar"></span>
+	        <span class="icon-bar"></span>
+	      </button>
+	      <a class="navbar-brand" href="index.html">Musicity</a>
+	    </div>
+	    <div class="navbar-collapse collapse">
+	      <ul class="nav navbar-nav">
+	        <li><a href="welcomePage.html">Home</a></li>
+	        <li><a href="newlySubmittedQ.html">Newly Submitted Questions</a></li>
+	        <li><a href="usersLeaderboard.html">View Users' Leaderboard</a></li>
+	        <li class="dropdown">
+	          <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Browse Questions <span class="caret"></span></a>
+	          <ul class="dropdown-menu">
+	            <li><a href="browseExistingQ.html">Browse Existing Questions</a></li>
+	            <li role="separator" class="divider"></li>
+	            <li ><a href="browseQByTopics.html">Browse Questions By Topics</a></li>
+	          </ul>
+	      </ul>
+	    </div><!--/.nav-collapse -->
+	  </div><!--/.container -->
+	</nav>
+
+
+	<div class="container user">
+		
+		<div class="col-md-4">
+			<a href="https://www.google.com">{{user.nickname}}</a>
+		</div>
+		<div class="col-md-4">
+			Rating: {{user.rating}}
+		</div>
+		<div class="your-profile-picture">
+			<img id="profilePic" src="{{user.image}}">
+		</div>
+		<div class="col-md-12">
+			Top Topics:
+			<span ng-repeat="topic in topTopics"> 
+				{{topic.name}}
+			</span>
+		</div>
+
+		<div class="col-md-12">
+			Short Description:
+			<div>
+				{{user.description}}
+			</div>
+		</div>
+<div class="divider">================================================================</div>
+
+		<div class="col-md-12">
+			Top Questions:
+			<div ng-repeat="q in topQs"> 
+			<div class="divider">================================================================</div>
+				<div class = "row">
+					<p class = "col-md-12"> 
+						{{q.text}}
+					</p>
+				</div> 
+				<div class = "row"> 
+					<div class = "col-md-4">
+						{{q.timestamp}}
+					</div> 
+					<div class = "col-md-4">
+						<span ng-repeat="topic in q.topics"> {{topic.name}}</span>
+					</div>
+					<div class = "col-md-2">
+						rating:   {{q.rating}}  
+					</div>
+					<div class = "col-md-2">
+						<button type="button" class="btn btn-default" aria-label="Left Align" onclick="handleLikeDislike()">
+							<span class="glyphicon glyphicon-thumbs-up" aria-hidden="true"></span>
+						</button>
+						<button type="button" class="btn btn-default" aria-label="Left Align">
+							<span class="glyphicon glyphicon-thumbs-down" aria-hidden="true"></span>
+						</button>
+					</div>
+				</div>
+			</div>
+		</div>
+
+		<div class="col-md-12">
+			Top Answer
+		</div>
+		
+
+	
+	</div>
+</body>
+</html>
